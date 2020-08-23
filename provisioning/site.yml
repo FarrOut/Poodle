@@ -1,0 +1,2 @@
+---
+- import_playbook: personal-moodle-stack-playbook.yml
