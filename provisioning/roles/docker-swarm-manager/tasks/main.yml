@@ -1,5 +1,12 @@
+- name: Install pre-requisites
+  dnf:
+    name:
+      - python3
+    state: latest
+
 # Install (Docker) python package.
-- pip:
+- name: Install Docker Python SDK
+  pip:
     name: docker-py
 
 - name: Init a new swarm with default parameters
