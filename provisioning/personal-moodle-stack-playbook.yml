@@ -1,10 +1,27 @@
 ---
 # Deploy a customized Moodle stack to a clustered layout.
 
-- name:           Deploy the proxy node.
+- name:           Deploy the proxy node(s).
   hosts:          proxies
   become:         yes
   become_method:  sudo
 
   roles:
+  - docker
   - nginx
+
+- name:           Deploy the application node(s).
+  hosts:          applications
+  become:         yes
+  become_method:  sudo
+
+  roles:
+  - docker
+
+- name:           Deploy the storage and persistance node(s).
+  hosts:          stores
+  become:         yes
+  become_method:  sudo
+
+  roles:
+  - docker
