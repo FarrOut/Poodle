@@ -1,0 +1,7 @@
+- name: Install pre-requisites
+  yum:
+    pkg:
+      - curl
+
+- name: Install Docker components
+  shell: 'curl -sSL https://get.docker.com | sh'
