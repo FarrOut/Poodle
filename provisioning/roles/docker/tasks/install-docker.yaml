@@ -1,11 +1,22 @@
-- name: install pre-requisites
-  dnf:
-    name: containerd.io
-    state: latest
-    update_cache: true
+- name: install the containerd.io rpm from a remote repo
+  yum:
+    name: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+    state: present
 
+- name: "Configuring docker-ce repo"
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+    mode: 0644
+    sha256sum: 6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218
 
 - name: install the latest version of Docker CE
-  dnf:
+  yum:
     name: docker-ce
-    state: latest    
+    state: latest
+
+- name: " Starting and Enabling Docker service"
+  service:
+    name: docker
+    state: started
+    enabled: yes
