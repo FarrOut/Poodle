@@ -1,7 +1,11 @@
-- name: Install pre-requisites
-  yum:
-    pkg:
-      - curl
+- name: install pre-requisites
+  dnf:
+    name: containerd.io
+    state: latest
+    update_cache: true
 
-- name: Install Docker components
-  shell: 'curl -sSL https://get.docker.com | sh'
+
+- name: install the latest version of Docker CE
+  dnf:
+    name: docker-ce
+    state: latest    
