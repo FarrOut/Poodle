@@ -1,0 +1,10 @@
+---
+# Deploy a customized Moodle stack to a clustered layout.
+
+- name:           Deploy the proxy node.
+  hosts:          proxies
+  become:         yes
+  become_method:  sudo
+
+  roles:
+  - nginx
