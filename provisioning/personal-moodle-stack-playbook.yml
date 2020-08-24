@@ -1,5 +1,5 @@
 ---
-# Deploy a customized Moodle stack to a clustered layout.
+# Deploy a customized Moodle stack to a Docker Swarm.
 
 - name:           Deploy the swarm managers
   hosts:          managers
@@ -9,3 +9,11 @@
   roles:
   - docker
   - docker-swarm-manager
+
+- name:           Deploy the swarm workers
+  hosts:          workers
+  become:         yes
+  become_method:  sudo
+
+  roles:
+  - docker  
