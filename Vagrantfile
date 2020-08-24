@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.compatibility_mode = "auto"
-    ansible.verbose = true
+    ansible.verbose = "vvv"
 
     # Call the default playbook.
     ansible.playbook = "provisioning/site.yml"
@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
 
     # Set of inventory groups to be included in the auto-generated inventory file.
     ansible.groups = {
-      "managers" => ["man1"],      
+      "managers" => ["man1"],
       "workers" => ["worker1"],
       "swarm" => ["managers","workers"],
       "swarm:vars" => {"ansible_sudo_pass" => "vagrant"}

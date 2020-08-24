@@ -8,6 +8,14 @@
     - swarm
     - worker
 
+- debug:
+    var: tokennode
+    verbosity: 2
+
+- debug:
+    var: hostmanager
+    verbosity: 2
+
 - name: join nodes to manager
   command: docker swarm join --token={{ tokennode }} {{ hostmanager }}
   become: yes
