@@ -1,0 +1,19 @@
+---
+- name: leaving older swarm
+  command: docker swarm leave -f
+  become: yes
+  ignore_errors: yes
+  tags:
+    - docker
+    - swarm
+    - worker
+
+- name: join nodes to manager
+  command: docker swarm join --token={{ tokennode }} {{ hostmanager }}
+  become: yes
+  register: swarm_join_result
+  failed_when: not "'This node is already part of a swarm' in command_result.stderr"
+  tags:
+    - docker
+    - swarm
+    - worker
