@@ -3,17 +3,9 @@
   command: docker swarm leave -f
   become: yes
   ignore_errors: yes
-  tags:
-    - docker
-    - swarm
-    - worker
 
 - debug:
-    var: tokennode
-    verbosity: 2
-
-- debug:
-    var: hostmanager
+    var: "{{ manager_join_token }}"
     verbosity: 2
 
 - name: join nodes to manager
@@ -21,9 +13,5 @@
   become: yes
   register: swarm_join_result
   failed_when: not "'This node is already part of a swarm' in command_result.stderr"
-  tags:
-    - docker
-    - swarm
-    - worker
 
 # Thanks to https://blog.innuy.com/2017/11/installation-of-docker-swarm-using.html

@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.compatibility_mode = "auto"
-    ansible.verbose = "vvv"
+    ansible.verbose = "vv"
 
     # Call the default playbook.
     ansible.playbook = "provisioning/site.yml"

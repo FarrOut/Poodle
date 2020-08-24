@@ -1,0 +1,63 @@
+---
+
+- name: initialize swarm cluster
+  become: yes
+  command: docker swarm init --advertise-addr={{ swarm_iface | default('eth0') }}:2377
+  register: bootstrap_first_node
+  tags:
+    - docker
+    - swarm
+    - manager
+    - reset
+
+- name: Get the Manager join-token
+  shell: docker swarm join-token --quiet manager
+  register: manager_token
+  tags:
+    - docker
+    - swarm
+    - manager
+
+- name: Set manager join token as a fact on all hosts
+  set_fact:
+    manager_join_token: "{{ manager_token.stdout }}"
+    delegate_to: "{{ item }}"
+  loop: "{{ groups['all'] }}"
+  tags:
+    - docker
+    - swarm
+    - manager
+
+- debug:
+    var: manager_join_token
+    verbosity: 2
+  tags:
+    - docker
+    - swarm
+    - manager
+
+- name: Get the Worker join-token
+  shell: docker swarm join-token --quiet worker
+  register: worker_token
+  tags:
+    - docker
+    - swarm
+    - worker
+
+- name: Set worker join token as a fact on all hosts
+  set_fact:
+    worker_join_token: "{{ worker_token.stdout }}"
+    delegate_to: "{{ item }}"
+  loop: "{{ groups['all'] }}"
+  tags:
+    - docker
+    - swarm
+    - worker
+
+- debug:
+    var: worker_join_token
+    verbosity: 2
+  tags:
+    - docker
+    - swarm
+    - worker

@@ -7,12 +7,13 @@
     - docker
     - swarm
     - manager
+    - reset
 
-- name: initialize swarm cluster
-  become: yes
-  command: docker swarm init --advertise-addr={{ swarm_iface | default('eth0') }}:2377
-  register: bootstrap_first_node
+- name: Initialize Swarm
+  include_tasks: init-swarm.yml
+  run_once: true
   tags:
     - docker
     - swarm
-    - manager
+    - init
+    - reset
