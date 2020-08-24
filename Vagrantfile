@@ -26,10 +26,10 @@ Vagrant.configure(2) do |config|
 
     # Set of inventory groups to be included in the auto-generated inventory file.
     ansible.groups = {
-      "managers" => ["man1"],
-      "managers:vars" => {"ansible_sudo_pass" => "vagrant"},
+      "managers" => ["man1"],      
       "workers" => ["worker1"],
-      "workers:vars" => {"ansible_sudo_pass" => "vagrant"}
+      "swarm" => ["managers","workers"],
+      "swarm:vars" => {"ansible_sudo_pass" => "vagrant"}
     }
 
     # default password for vagrant boxes to allow sudo priviledges
