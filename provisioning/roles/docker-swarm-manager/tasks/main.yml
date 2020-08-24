@@ -1,8 +1,18 @@
-- name: Install pre-requisites
-  include_role:
-    name: docker-swarm
+---
+- name: Disabling swarm
+  become: yes
+  command: docker swarm leave -f
+  ignore_errors: yes
+  tags:
+    - docker
+    - swarm
+    - manager
 
-- name: Init a new swarm with default parameters
-  docker_swarm:
-    state: present
-  register: register_swarm
+- name: initialize swarm cluster
+  become: yes
+  command: docker swarm init --advertise-addr={{ swarm_iface | default('eth0') }}:2377
+  register: bootstrap_first_node
+  tags:
+    - docker
+    - swarm
+    - manager
