@@ -4,11 +4,10 @@
       - python3
     state: latest
 
-# Install (Docker) python package.
 - name: Install Docker Python SDK
   pip:
     name: docker-py
 
 - name: Init a new swarm with default parameters
   docker_swarm:
-    state: present
+    state: present    
