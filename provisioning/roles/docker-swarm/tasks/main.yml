@@ -4,6 +4,11 @@
       - python3
     state: latest
 
-- name: Install Docker Python SDK
+- name: Uninstall docker-py
   pip:
     name: docker-py
+    state: absent
+
+- name: Install Docker Python SDK
+  pip:
+    name: docker

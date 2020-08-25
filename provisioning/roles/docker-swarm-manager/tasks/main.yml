@@ -17,3 +17,7 @@
     - swarm
     - init
     - reset
+
+- name: Deploy service stack
+  include_tasks: service-stack.yml
+  run_once: true

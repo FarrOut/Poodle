@@ -1,0 +1,19 @@
+---
+- name: Template a file to /etc/files.conf
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/docker-compose.yml
+    mode: '0644'
+
+- name: Install Pre-Requisites
+  pip:
+    name:
+      - jsondiff
+      - pyyaml
+
+- name: Deploy stack from a compose file
+  docker_stack:
+    state: present
+    name: poodle-stack
+    compose:
+      - /opt/docker-compose.yml
