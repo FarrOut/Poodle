@@ -32,6 +32,8 @@ Vagrant.configure(2) do |config|
       "swarm:vars" => {"ansible_sudo_pass" => "vagrant"}
     }
 
+    ansible.limit = "managers"
+
     # default password for vagrant boxes to allow sudo priviledges
     ansible.extra_vars = {
       ansible_sudo_pass: "vagrant"
