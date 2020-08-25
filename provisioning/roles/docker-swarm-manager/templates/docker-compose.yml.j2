@@ -10,9 +10,15 @@ services:
       - 8080:80
     deploy:
       placement:
-        max_replicas_per_node: 1        
+        max_replicas_per_node: 1
       restart_policy:
         condition: on-failure
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 networks:
   frontend:
