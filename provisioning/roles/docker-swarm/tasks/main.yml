@@ -1,0 +1,9 @@
+- name: Install pre-requisites
+  dnf:
+    name:
+      - python3
+    state: latest
+
+- name: Install Docker Python SDK
+  pip:
+    name: docker-py

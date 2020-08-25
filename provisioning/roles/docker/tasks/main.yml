@@ -3,8 +3,8 @@
   tags:
   - docker
 
-- name: Include docker-compose
-  include: install-docker-compose.yaml
-  tags:
-  - docker
-  - docker-compose
+# - name: Include docker-compose
+#   include: install-docker-compose.yaml
+#   tags:
+#   - docker
+#   - docker-compose

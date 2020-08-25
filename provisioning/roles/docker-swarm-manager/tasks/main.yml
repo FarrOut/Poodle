@@ -1,0 +1,19 @@
+---
+- name: Disabling swarm
+  become: yes
+  command: docker swarm leave -f
+  ignore_errors: yes
+  tags:
+    - docker
+    - swarm
+    - manager
+    - reset
+
+- name: Initialize Swarm
+  include_tasks: init-swarm.yml
+  run_once: true
+  tags:
+    - docker
+    - swarm
+    - init
+    - reset
