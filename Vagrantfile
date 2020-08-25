@@ -8,9 +8,6 @@ Vagrant.configure(2) do |config|
     manager.vm.box = "centos/8"
     manager.vm.network "forwarded_port", guest: 8080, host: 8080
   end
-  config.vm.define "worker1" do |worker1|
-    worker1.vm.box = "centos/8"
-  end
 
   config.vm.provider "virtualbox" do |vb|
      vb.memory = "1024"
@@ -29,8 +26,7 @@ Vagrant.configure(2) do |config|
     # Set of inventory groups to be included in the auto-generated inventory file.
     ansible.groups = {
       "managers" => ["manager"],
-      "workers" => ["worker1"],
-      "swarm" => ["managers","workers"],
+      "swarm" => ["managers"],
       "swarm:vars" => {"ansible_sudo_pass" => "vagrant"}
     }
 
