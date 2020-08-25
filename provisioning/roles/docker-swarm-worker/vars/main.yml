@@ -1,0 +1,6 @@
+# vars file for dockermanager
+tokennode: "{% for host in groups['managers'] %}
+    {{ hostvars[host]['manager_join_token'] }}
+{% endfor %}"
+
+hostmanager: "{{ hostvars.manager.bootstrap_first_node.stdout.split('\n')[6] }}"
