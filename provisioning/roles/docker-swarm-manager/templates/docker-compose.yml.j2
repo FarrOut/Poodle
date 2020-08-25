@@ -4,34 +4,16 @@ services:
   nginx:
     image: nginx:stable
     networks:
+      - frontend
       - backend
     ports:
       - 8080:80
     deploy:
       placement:
-        max_replicas_per_node: 1
-        constraints:
-          - "node.role==manager"
-      restart_policy:
-        condition: on-failure
-
-  db:
-    image: postgres:12.4
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - backend
-    deploy:
-      placement:
-        max_replicas_per_node: 1
-        constraints:
-          - "node.role==manager"
+        max_replicas_per_node: 1        
       restart_policy:
         condition: on-failure
 
 networks:
   frontend:
   backend:
-
-volumes:
-  db-data:
