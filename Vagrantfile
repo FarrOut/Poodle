@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
   # Define Boxes
   config.vm.define "manager", primary: true do |manager|
     manager.vm.box = "centos/8"
-    manager.vm.network "forwarded_port", guest: 8080, host: 8080
+    manager.vm.network "forwarded_port", guest: 8080, host: 8080, autocorrect: true
   end
 
   config.vm.provider "virtualbox" do |vb|
