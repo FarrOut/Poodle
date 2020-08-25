@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+
+  nginx:
+    image: nginx:stable
+    networks:
+      - frontend
+      - backend
+    ports:
+      - 8080:80
+    deploy:
+      placement:
+        max_replicas_per_node: 1        
+      restart_policy:
+        condition: on-failure
+
+networks:
+  frontend:
+  backend:

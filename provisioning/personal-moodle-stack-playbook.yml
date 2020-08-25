@@ -1,6 +1,8 @@
 ---
 - name: Install common packages
-  hosts: swarm
+  hosts: all
+  become:         yes
+  become_method:  sudo
   roles:
    - docker
    - docker-swarm
