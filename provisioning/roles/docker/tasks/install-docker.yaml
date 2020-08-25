@@ -1,7 +1,13 @@
-# TODO Find a more efficient method of doing this
-- name: install the containerd.io rpm from a remote repo
-  yum:
-    name: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+- name: Download containerd.io package
+  get_url:
+    url: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+    dest: /opt/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+    mode: 0644
+    sha256sum: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+- name: install the containerd.io rpm from a file
+  dnf:
+    name: /opt/containerd.io-1.2.6-3.3.el7.x86_64.rpm
     state: present
 
 - name: "Configuring docker-ce repo"

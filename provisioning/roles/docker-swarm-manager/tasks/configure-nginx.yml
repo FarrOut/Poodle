@@ -1,0 +1,31 @@
+
+- name: Template Nginx config file
+  template:
+    src: nginx.conf.j2
+    dest: /opt/nginx.conf
+    mode: '0644'
+
+- name: add custom name to host machine's hosts file
+  lineinfile:
+    line: "127.0.0.1\t\tpoodle.local"
+    path: '/etc/hosts'
+    backup: yes
+    insertbefore: BOF
+    state: present
+  delegate_to: localhost
+  tags:
+    - never
+    - local-resolver
+
+- name: Install Certbot
+  dnf:
+    name:
+      - certbot
+      - python3-certbot-nginx
+    state: latest
+
+- name: Generate certificate for Nginx
+  shell: 'certbot --nginx'
+
+- name: Create cronjob to automatically renew certificates
+  shell: 'echo "0 0,12 * * * root python3 -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | sudo tee -a /etc/crontab > /dev/null'

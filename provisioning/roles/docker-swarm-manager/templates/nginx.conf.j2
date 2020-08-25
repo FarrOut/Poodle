@@ -28,3 +28,27 @@ http {
 
     include /etc/nginx/conf.d/*.conf;
 }
+
+server {
+    listen 443;
+    ssl on;
+    ssl_certificate /etc/ssl/ssl-bundle.crt;
+    ssl_certificate_key /etc/ssl/ssl-dragon.key;
+    server_name ssl-dragon.com;
+    access_log /var/log/nginx/nginx.vhost.access.log;
+    error_log /var/log/nginx/nginx.vhost.error.log;
+    location / {
+      root /var/www/;
+      index index.html;
+      }
+}
+
+# HTTPS Redirect
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name example.com www.example.com;
+
+    return 302 https://$server_name$request_uri;
+}

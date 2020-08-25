@@ -5,11 +5,8 @@
     dest: /opt/docker-compose.yml
     mode: '0644'
 
-- name: Template Nginx config file
-  template:
-    src: nginx.conf.j2
-    dest: /opt/nginx.conf
-    mode: '0644'
+- name: Configure Nginx service
+  include_tasks: configure-nginx.yml
 
 - name: Install Pre-Requisites
   pip:
