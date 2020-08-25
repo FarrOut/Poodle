@@ -1,6 +1,20 @@
 version: "3.8"
 services:
 
+  nginx:
+    image: nginx:stable    
+    networks:
+      - backend
+    ports:
+      - 8080:80
+    deploy:
+      placement:
+        max_replicas_per_node: 1
+        constraints:
+          - "node.role==manager"
+      restart_policy:
+        condition: on-failure
+
   db:
     image: postgres:9.4
     volumes:
