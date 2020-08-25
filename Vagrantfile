@@ -2,6 +2,7 @@ Vagrant.require_version ">= 1.8.0"
 
 Vagrant.configure(2) do |config|
   config.vm.network :private_network, type: 'dhcp'
+  config.vm.usable_port_range = 8080..8999
 
   # Define Boxes
   config.vm.define "manager", primary: true do |manager|
