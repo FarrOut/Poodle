@@ -3,5 +3,6 @@
 - name: Update package cache
   dnf:
     update_cache: yes
+  run_once: yes
   tags:
     - update_cache
