@@ -2,7 +2,7 @@ Vagrant.require_version ">= 1.8.0"
 
 Vagrant.configure(2) do |config|
   config.vm.network :private_network, ip: "192.168.50.4", auto_config: true
-  config.vm.usable_port_range = 8080..8999
+  config.vm.usable_port_range = 80..100
   config.vm.hostname = "poodle.local"
 
   # Define Boxes
@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "boss", primary: true do |boss|
     boss.vm.box = "centos/8"
     boss.vm.network "forwarded_port", guest: 80, host: 8080, autocorrect: true
+    boss.vm.network "forwarded_port", guest: 443, host: 8443, autocorrect: true
   end
 
   config.vm.provider "virtualbox" do |vb|
