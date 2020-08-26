@@ -6,7 +6,7 @@
     mode: '0644'
 
 - name: Configure Nginx service
-  include_tasks: configure-nginx.yml
+  include: configure-nginx.yml
 
 - name: Install Pre-Requisites
   pip:
