@@ -36,6 +36,8 @@ Vagrant.configure(2) do |config|
     # Limit target boxes to a subset.
     ansible.limit = "boss"
 
+    ansible.ask_become_pass = false
+
     # default password for vagrant boxes to allow sudo priviledges
     ansible.extra_vars = {
       ansible_sudo_pass: "vagrant"

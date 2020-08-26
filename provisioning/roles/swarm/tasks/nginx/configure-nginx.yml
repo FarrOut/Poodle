@@ -2,7 +2,8 @@
 
 - name: Create directories
   file:
-    path: /opt/nginx
+    path:
+      - /opt/nginx      
     state: directory
     mode: '0755'
 
@@ -24,12 +25,5 @@
       - python3-certbot-nginx
     state: latest
 
-- name: Wait for web service to start listening
-  wait_for:
-    port: 80
-    delay: 10
-    state: started
-    host: poodle.local
-
-- name: Generate certificate for Nginx
-  command: /usr/bin/certbot certonly --standalone --non-interactive --agree-tos --email farr.gs@gmail.com -d poodle.local
+- name: Call certificate signing tasks
+  include: generate-certs.yml
