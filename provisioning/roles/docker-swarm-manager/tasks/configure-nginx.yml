@@ -5,18 +5,6 @@
     dest: /opt/nginx.conf
     mode: '0644'
 
-- name: add custom name to host machine's hosts file
-  lineinfile:
-    line: "127.0.0.1\t\tpoodle.local"
-    path: '/etc/hosts'
-    backup: yes
-    insertbefore: BOF
-    state: present
-  delegate_to: localhost
-  tags:
-    - never
-    - local-resolver
-
 - name: Install Certbot
   dnf:
     name:
