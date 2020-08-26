@@ -4,3 +4,6 @@
   run_once: true
   tags:
     - init
+
+- name: Deploy stack
+  include: stack.yml  

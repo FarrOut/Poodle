@@ -6,9 +6,6 @@
     dest: /opt/docker-compose.yml
     mode: '0644'
 
-- name: Configure Nginx service
-  include: configure-nginx.yml
-
 - name: Install Pre-Requisites
   pip:
     name:

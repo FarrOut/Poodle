@@ -3,6 +3,7 @@
 - name: Initialize a new swarm
   docker_swarm:
     state: present
+    advertise_addr: "{{ swarm_iface | default('eth0') }}:2377" 
 
 - name: Get the Manager join-token
   shell: docker swarm join-token --quiet manager

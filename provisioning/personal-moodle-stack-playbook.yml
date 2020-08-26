@@ -15,7 +15,6 @@
 
   roles:
    - swarm
-   - nginx
 
 - name:           Deploy additional swarm managers
   hosts:          managers
