@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   # 'The Boss' is just the manager that is responsible for initiating the Swarm.
   config.vm.define "boss", primary: true do |boss|
     boss.vm.box = "centos/8"
-    boss.vm.network "forwarded_port", guest: 8080, host: 8080, autocorrect: true
+    boss.vm.network "forwarded_port", guest: 80, host: 8080, autocorrect: true
   end
 
   config.vm.provider "virtualbox" do |vb|

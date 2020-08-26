@@ -4,12 +4,13 @@ services:
   nginx:
     image: nginx:stable
     volumes:
-      - /opt/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /opt/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - nginx-logs:/var/log/nginx/:ro
     networks:
       - frontend
       - backend
     ports:
-      - 8080:80
+      - 80:80
     deploy:
       placement:
         max_replicas_per_node: 1
@@ -25,3 +26,6 @@ services:
 networks:
   frontend:
   backend:
+
+volumes:
+  nginx-logs:

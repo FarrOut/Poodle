@@ -1,8 +1,15 @@
 ---
+
+- name: Create directories
+  file:
+    path: /opt/nginx
+    state: directory
+    mode: '0755'
+
 - name: Template Nginx config file
   template:
     src: nginx.conf.j2
-    dest: /opt/nginx.conf
+    dest: /opt/nginx/nginx.conf
     mode: '0644'
 
 - name: install EPEL
@@ -17,5 +24,12 @@
       - python3-certbot-nginx
     state: latest
 
+- name: Wait for web service to start listening
+  wait_for:
+    port: 80
+    delay: 10
+    state: started
+    host: poodle.local
+
 - name: Generate certificate for Nginx
-  command: /usr/bin/certbot --nginx
+  command: /usr/bin/certbot certonly --standalone --non-interactive --agree-tos --email farr.gs@gmail.com -d poodle.local

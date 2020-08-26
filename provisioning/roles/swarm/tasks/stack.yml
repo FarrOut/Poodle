@@ -12,12 +12,12 @@
       - jsondiff
       - pyyaml
 
+- name: Configure Nginx service
+  include: configure-nginx.yml
+
 - name: Deploy stack from a compose file
   docker_stack:
     state: present
     name: poodle-stack
     compose:
       - /opt/docker-compose.yml
-
-- name: Configure Nginx service
-  include: configure-nginx.yml
