@@ -6,11 +6,17 @@
   roles:
    - common
    - docker
+
+# Deploy a customized stack to a Docker Swarm.
+- name:           Deploy 'The Boss'
+  hosts:          boss
+  become:         yes
+  become_method:  sudo
+
+  roles:
    - docker-swarm
 
-# Deploy a customized Moodle stack to a Docker Swarm.
-
-- name:           Deploy the swarm managers
+- name:           Deploy additional swarm managers
   hosts:          managers
   become:         yes
   become_method:  sudo

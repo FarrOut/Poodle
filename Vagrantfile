@@ -6,9 +6,10 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "poodle.local"
 
   # Define Boxes
-  config.vm.define "manager", primary: true do |manager|
-    manager.vm.box = "centos/8"
-    manager.vm.network "forwarded_port", guest: 8080, host: 8080, autocorrect: true
+  # 'The Boss' is just the manager that is responsible for initiating the Swarm.
+  config.vm.define "boss", primary: true do |boss|
+    boss.vm.box = "centos/8"
+    boss.vm.network "forwarded_port", guest: 8080, host: 8080, autocorrect: true
   end
 
   config.vm.provider "virtualbox" do |vb|
@@ -27,12 +28,13 @@ Vagrant.configure(2) do |config|
 
     # Set of inventory groups to be included in the auto-generated inventory file.
     ansible.groups = {
-      "managers" => ["manager"],
+      "managers" => ["boss"],
       "swarm" => ["managers"],
       "swarm:vars" => {"ansible_sudo_pass" => "vagrant"}
     }
 
-    ansible.limit = "managers"
+    # Limit target boxes to a subset.
+    ansible.limit = "boss"
 
     # default password for vagrant boxes to allow sudo priviledges
     ansible.extra_vars = {

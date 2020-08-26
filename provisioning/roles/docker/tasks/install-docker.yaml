@@ -1,3 +1,18 @@
+- name: Install pre-requisites
+  dnf:
+    name:
+      - python3
+    state: latest
+
+- name: Uninstall docker-py
+  pip:
+    name: docker-py
+    state: absent
+
+- name: Install Docker Python SDK
+  pip:
+    name: docker
+
 - name: Download containerd.io package
   get_url:
     url: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
@@ -18,7 +33,7 @@
     sha256sum: 6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218
 
 - name: install the latest version of Docker CE
-  yum:
+  dnf:
     name: docker-ce
     state: latest
 
