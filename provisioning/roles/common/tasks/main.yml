@@ -1,0 +1,7 @@
+---
+
+- name: Update package cache
+  dnf:
+    update_cache: yes
+  tags:
+    - update_cache

@@ -4,6 +4,7 @@
   become:         yes
   become_method:  sudo
   roles:
+   - common
    - docker
    - docker-swarm
 
