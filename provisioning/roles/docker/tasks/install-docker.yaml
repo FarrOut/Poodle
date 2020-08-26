@@ -3,7 +3,7 @@
     url: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
     dest: /opt/containerd.io-1.2.6-3.3.el7.x86_64.rpm
     mode: 0644
-    sha256sum: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    sha256sum: 90679e91563f72708b5fe9c21acb2d1788b7fddbc796b86d55d67a04aad2278b
 
 - name: install the containerd.io rpm from a file
   dnf:
