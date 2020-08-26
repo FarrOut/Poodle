@@ -1,8 +1,9 @@
 Vagrant.require_version ">= 1.8.0"
 
 Vagrant.configure(2) do |config|
-  config.vm.network :private_network, type: 'dhcp'
+  config.vm.network :private_network, ip: "192.168.50.4", auto_config: true
   config.vm.usable_port_range = 8080..8999
+  config.vm.hostname = "poodle.local"
 
   # Define Boxes
   config.vm.define "manager", primary: true do |manager|
