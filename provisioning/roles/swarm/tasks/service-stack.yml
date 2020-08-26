@@ -1,4 +1,5 @@
 ---
+
 - name: Template docker-compose.yml file
   template:
     src: docker-compose.yml.j2

@@ -14,7 +14,8 @@
   become_method:  sudo
 
   roles:
-   - docker-swarm
+   - swarm
+   - nginx
 
 - name:           Deploy additional swarm managers
   hosts:          managers
@@ -22,7 +23,7 @@
   become_method:  sudo
 
   roles:
-   - docker-swarm-manager
+   - manager
 
 - name:           Deploy the swarm workers
   hosts:          workers
@@ -30,4 +31,4 @@
   become_method:  sudo
 
   roles:
-   - docker-swarm-worker
+   - worker
