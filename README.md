@@ -5,5 +5,13 @@ An easy-to-deploy personal Moodle stack.
 ### Install Dependencies
 There are some pre-requisites which need to be in place in order to use this playbook.
 
+### Install Ansible
+```apt install ansible```
+
+### Install Vagrant
+```apt install vagrant```
+
+### Install vagrant-hostsupdater
 For local domain name resolution.
+
 ```vagrant plugin install vagrant-hostsupdater```
