@@ -21,9 +21,9 @@ Vagrant - to provision VMs to run and test your Poodle stack locally.
 #### Install vagrant-hostsupdater
 Vagrant hostsupdater plugin - for local domain name resolution.
 
-``` vagrant plugin install vagrant-hostsupdater ```
+2. ``` vagrant plugin install vagrant-hostsupdater ```
 
-2. ### Checkout Source Code
+### Checkout Source Code
 
 You will need to copy the source code to your local machine, from where it will be executed by Ansible.
 
