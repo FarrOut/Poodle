@@ -16,8 +16,16 @@ This project is aimed at making the complicated technical task of deploying a Mo
    * [Usage](#usage)
       * [Local](#local)
          * [Deploying with Vagrant](#deploying-with-vagrant)
-      * [Summary of Deployment Steps](#summary-of-deployment-steps)
-      * [Accessing Web Service](#accessing-web-service)
+         * [Accessing Web Service](#accessing-web-service)
+   * [Summary of Deployment Steps](#summary-of-deployment-steps)
+      * [Custom Deployment Environment](#custom-deployment-environment)
+   * [Future Work](#future-work)
+      * [Multiple nodes](#multiple-nodes)
+      * [Microservices](#microservices)
+         * [Persistance](#persistance)
+         * [Moodle Application](#moodle-application)
+      * [Issue Board](#issue-board)
+   * [Conclusion](#conclusion)
 
 <!-- ----------------------------------------------------------------------- -->
 
@@ -115,7 +123,7 @@ vagrant up
 
 One might also choose to deploy to a set of remote hosts, such as cloud VMs.
 
-Included is an example of an [inventory](https://github.com/FarrOut/Poodle/blob/feature/documentation/inventory.yml) file. Keep the groups as is, but add the desired host nodes with their relevant IP addresses.
+Included is an example of an [inventory](https://github.com/FarrOut/Poodle/blob/feature/documentation/inventory.yml) file. Keep the groups as is, but add your desired host nodes with their relevant IP addresses.
 
 To deploy to remote hosts, we will need to exclude Vagrant and execute Ansible directly. Like so:
 
@@ -147,4 +155,4 @@ For a more detailed list of outstanding issues which are begging to be seen to, 
 
 ## Conclusion
 
-I hope you enjoy using Poodle as much as I have enjoyed developing it -- Please feel to contribute to the effort!
+I hope you enjoy using Poodle as much as I have enjoyed developing it -- Please feel free to contribute to the effort!
