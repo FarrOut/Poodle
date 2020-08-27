@@ -5,7 +5,9 @@ services:
     image: nginx:stable
     volumes:
       - /opt/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - /opt/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro      
+      - /opt/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - /opt/ssl/local.poodle.pem:/etc/nginx/ssl/cert.key:ro
+      - /opt/ssl/local.poodle.crt:/etc/nginx/ssl/cert.crt:ro
       - nginx-logs:/var/log/nginx/:ro
     networks:
       - frontend

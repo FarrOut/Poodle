@@ -10,7 +10,7 @@ server {
 
 listen 443;
 
-server_name linuxtechlab.com;
+server_name poodle.local;
 
 ssl_certificate /etc/nginx/ssl/cert.crt;
 
@@ -38,11 +38,11 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
 proxy_set_header X-Forwarded-Proto $scheme;
 
-proxy_pass http://localhost:8080;
+proxy_pass http://localhost:80;
 
 proxy_read_timeout 90;
 
-proxy_redirect http://localhost:8080 https://linuxtechlab.com;
+proxy_redirect http://localhost:80 https://poodle.local;
 
 }
 

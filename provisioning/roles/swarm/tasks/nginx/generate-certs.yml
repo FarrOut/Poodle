@@ -5,20 +5,17 @@
     state: directory
     mode: '0755'
   with_items:
-    - /etc/ssl
-    - /etc/ssl/crt
-    - /etc/ssl/csr
-    - /etc/ssl/private
+    - /opt/ssl
 
 - name: Generate a new OpenSSL private key
   openssl_privatekey:
-    path: /etc/ssl/private/local.poodle.pem
+    path: /opt/ssl/local.poodle.pem
     force: yes
 
 - name: Generate an OpenSSL Certificate Signing Request with Subject information
   openssl_csr:
-    path: /etc/ssl/csr/local.poodle.csr
-    privatekey_path: /etc/ssl/private/local.poodle.pem
+    path: /opt/ssl/local.poodle.csr
+    privatekey_path: /opt/ssl/local.poodle.pem
     country_name: ZA
     organization_name: FarrOut
     email_address: farr.gs@gmail.com
@@ -26,7 +23,7 @@
 
 - name: Generate a Self Signed OpenSSL certificate
   openssl_certificate:
-    path: /etc/ssl/crt/local.poodle.crt
-    privatekey_path: /etc/ssl/private/local.poodle.pem
-    csr_path: /etc/ssl/csr/local.poodle.csr
+    path: /opt/ssl/local.poodle.crt
+    privatekey_path: /opt/ssl/local.poodle.pem
+    csr_path: /opt/ssl/local.poodle.csr
     provider: selfsigned
