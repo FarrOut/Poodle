@@ -16,21 +16,21 @@ Git - to checkout the Poodle repository.
 Ansible - to execute the Poodle playbook.
 Vagrant - to provision VMs to run and test your Poodle stack locally.
 
-``` apt install git ansible vagrant ```
+1. ``` apt install git ansible vagrant ```
 
 #### Install vagrant-hostsupdater
 Vagrant hostsupdater plugin - for local domain name resolution.
 
 ``` vagrant plugin install vagrant-hostsupdater ```
 
-### Checkout Source Code
+2. ### Checkout Source Code
 
 You will need to copy the source code to your local machine, from where it will be executed by Ansible.
 
 #### Checkout from GitHub
 The easiest and recommended method is by cloning the repo from GitHub.
 
-``` git clone git@github.com:FarrOut/Poodle.git ```
+3. ``` git clone git@github.com:FarrOut/Poodle.git ```
 
 #### Manual
 If you prefer, you can also download and extract the source code manually.
