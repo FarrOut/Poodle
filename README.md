@@ -4,7 +4,7 @@ Poodle (Personal Moodle) is an easy-to-deploy personal Moodle stack.
 This project is aimed at making the complicated technical task of deploying a Moodle webservice as easy as possible for the average user who would prefer to focus their energy on creating and sharing helpful content with the world.
 
 <img src="https://user-images.githubusercontent.com/8818608/91449653-a7ad5f00-e87b-11ea-8bc1-c892c382e507.jpg" alt="poodle" width="200"/>
-
+<hr>
 <!-- ----------------------------------------------------------------------- -->
 
 * [Poodle](#poodle)
