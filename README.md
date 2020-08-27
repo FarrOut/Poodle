@@ -5,7 +5,7 @@ This project is aimed at making the complicated technical task of deploying a Mo
 
 <!-- ----------------------------------------------------------------------- -->
 
-* [Table of Contents](#table-of-contents)
+* [Poodle](#poodle)
    * [Preparation](#preparation)
       * [Install Dependencies](#install-dependencies)
          * [System packages](#system-packages)
@@ -13,8 +13,11 @@ This project is aimed at making the complicated technical task of deploying a Mo
       * [Checkout Source Code](#checkout-source-code)
          * [Checkout from GitHub](#checkout-from-github)
          * [Manual](#manual)
-         * [Summary](#summary)
    * [Usage](#usage)
+      * [Local](#local)
+         * [Deploying with Vagrant](#deploying-with-vagrant)
+      * [Summary](#summary)
+      * [Accessing Web Service](#accessing-web-service)
 
 <!-- ----------------------------------------------------------------------- -->
 
