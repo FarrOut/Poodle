@@ -1,0 +1,7 @@
+---
+
+- name: Template watch stack script
+  template:
+    src: watch-stack.sh.j2
+    dest: /usr/local/bin/watch-stack.sh
+    mode: '550'
