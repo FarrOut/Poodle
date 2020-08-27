@@ -7,12 +7,19 @@
     mode: '0755'
   with_items:
     - /opt/nginx
+    - /opt/nginx/conf.d
     - /opt/nginx/sites-available
 
-- name: Template Nginx config file
+- name: Template Nginx main config file
   template:
     src: nginx/nginx.conf.j2
     dest: /opt/nginx/nginx.conf
+    mode: '0644'
+
+- name: Template Nginx default server config file
+  template:
+    src: nginx/poodle.conf.j2
+    dest: /opt/nginx/conf.d/default.conf
     mode: '0644'
 
 - name: Call certificate signing tasks
