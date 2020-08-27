@@ -31,3 +31,12 @@
 
   roles:
    - worker
+
+# Tasks to be executed on local Ansible machine.
+- name: Local Tasks
+  hosts: localhost
+  become:         yes
+  become_method:  sudo
+
+  roles:
+   - trust-store

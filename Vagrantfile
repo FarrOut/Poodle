@@ -25,7 +25,7 @@ Vagrant.configure(2) do |config|
     ansible.playbook = "provisioning/site.yml"
 
     # Optionally filter tags (string or array of strings)
-    ansible.tags = ["all,convenience"]
+    ansible.tags = ["all,convenience"]    
 
     # Set of inventory groups to be included in the auto-generated inventory file.
     ansible.groups = {

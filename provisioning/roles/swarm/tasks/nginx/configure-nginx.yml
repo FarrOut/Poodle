@@ -24,6 +24,3 @@
 
 - name: Call certificate signing tasks
   include: generate-certs.yml
-
-# - name: Load Certificate Key Pair
-#   include: load-key-pair.yml
