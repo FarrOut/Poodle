@@ -69,7 +69,7 @@ If you prefer, you can also download and extract the source code manually.
 
 A local stack can be easily spun up using Vagrant, from the root of the repository.
 
-![vagrant up](https://i.imgur.com/9HxE9xBb.gif)
+![vagrant_up](https://user-images.githubusercontent.com/8818608/91446256-85b1dd80-e877-11ea-89af-78200e0add34.gif)
 
 To build a new stack of VMs:
 
