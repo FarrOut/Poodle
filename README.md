@@ -161,7 +161,7 @@ watch -n 1 'sudo docker ps'
 
 ```
 
-Under the 'Status' column, our containers should hopefully all read HEALTHY.
+Under the STATUS column, our containers should hopefully all read 'healthy'.
 
 ![docker ps](https://user-images.githubusercontent.com/8818608/91448185-dcb8b200-e879-11ea-8d69-f1564d0e66f2.gif)
 
