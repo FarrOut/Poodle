@@ -8,7 +8,7 @@ This project is aimed at making the complicated technical task of deploying a Mo
 There are a few simple steps to get your home ready for your new Poodle.
 
 ### Install Dependencies
-There are some pre-requisites which need to be in place in order to use this playbook.
+There are some pre-requisites which need to be in place in order to use this playbook. Remember to elevate priveleges with _sudo_ where necessary.
 
 #### System packages
 
