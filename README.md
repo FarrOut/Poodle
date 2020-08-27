@@ -97,7 +97,7 @@ E.g. vagrant suspend boss
 
 Delete VMs
 
-``` vagrant suspend -f [machine-name] ```
+``` vagrant destroy -f [machine-name] ```
 E.g. vagrant destroy -f boss
 
 #### Accessing Web Service
