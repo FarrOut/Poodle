@@ -102,7 +102,7 @@ E.g. vagrant destroy -f boss
 
 #### Accessing Web Service
 
-It takes about a minute for the containers that form the stack to spin up, then you may access the web service from the web browser of your choice. Except IE (the poodle buried it).
+**It takes about a minute** for the containers that form the stack to spin up, then you may access the web service from the web browser of your choice. Except IE (the poodle buried it).
 
 Vagrant defines a name resolution entry, _poodle.local_, in your local machine to point to the stack.
 
