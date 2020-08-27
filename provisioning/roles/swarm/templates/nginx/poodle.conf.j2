@@ -1,6 +1,4 @@
 server {
-  listen              80;
-  listen              [::]:80;
   listen              443 ssl;
 
   server_name         localhost poodle.local poodle.*;
@@ -18,4 +16,13 @@ server {
   location = /50x.html {
       root   /usr/share/nginx/html;
   }
+}
+
+server {
+  listen               80 default_server;
+  listen               [::]:80;
+
+  server_name _;
+
+  return 301 https://poodle.local$request_uri;
 }
