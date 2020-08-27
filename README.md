@@ -29,6 +29,7 @@ You will need to copy the source code to your local machine, from where it will 
 
 #### Checkout from GitHub
 The easiest and recommended method is by cloning the repo from GitHub.
+
 ``` git clone git@github.com:FarrOut/Poodle.git ```
 
 #### Manual
