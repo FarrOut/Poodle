@@ -16,7 +16,7 @@ This project is aimed at making the complicated technical task of deploying a Mo
    * [Usage](#usage)
       * [Local](#local)
          * [Deploying with Vagrant](#deploying-with-vagrant)
-      * [Summary](#summary)
+      * [Summary of Deployment Steps](#summary-of-deployment-steps)
       * [Accessing Web Service](#accessing-web-service)
 
 <!-- ----------------------------------------------------------------------- -->
@@ -83,7 +83,7 @@ Delete VMs
 ``` vagrant suspend -f [machine-name] ```
 E.g. vagrant destroy -f boss
 
-### Summary
+### Summary of Deployment Steps
 For your convenience, here is an ordered list of commands which you need to execute.
 
 ```
