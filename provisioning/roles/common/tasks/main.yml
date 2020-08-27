@@ -6,3 +6,9 @@
   run_once: yes
   tags:
     - update_cache
+
+- name: Place convenience scripts
+  include: convenience-scripts.yml
+  tags:
+    - convenience
+    - never
