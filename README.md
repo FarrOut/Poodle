@@ -152,6 +152,18 @@ vagrant ssh [machine-name]
 
 ![vagrant ssh](https://user-images.githubusercontent.com/8818608/91447791-5bf9b600-e879-11ea-93e6-5465ee6b4cdc.gif)
 
+### Display Docker process info
+
+```
+
+watch -n 1 'sudo docker ps'
+
+
+```
+
+Under the 'Status' column, our containers should hopefully all read HEALTHY.
+
+![docker ps](https://user-images.githubusercontent.com/8818608/91448185-dcb8b200-e879-11ea-8d69-f1564d0e66f2.gif)
 
 ## Future Work
 
