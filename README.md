@@ -106,6 +106,8 @@ _poodle.local/_
 
 in your browser.
 
+![web](https://user-images.githubusercontent.com/8818608/91446744-21434e00-e878-11ea-8a23-b49eeeaf439e.gif)
+
 Please note:
 Because the SSL certifate generated is self-signed your browser will present a warning message to this effect. Because we trust Poodle's certificate (after examining this source code) please bypass this warning and proceed.
 
