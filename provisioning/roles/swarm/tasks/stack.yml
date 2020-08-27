@@ -1,5 +1,6 @@
 ---
-- name: Template a file to /etc/files.conf
+
+- name: Template docker-compose.yml file
   template:
     src: docker-compose.yml.j2
     dest: /opt/docker-compose.yml
@@ -10,6 +11,9 @@
     name:
       - jsondiff
       - pyyaml
+
+- name: Configure Nginx service
+  include: nginx/configure-nginx.yml
 
 - name: Deploy stack from a compose file
   docker_stack:

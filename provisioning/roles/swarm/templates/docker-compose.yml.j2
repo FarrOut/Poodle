@@ -3,11 +3,18 @@ services:
 
   nginx:
     image: nginx:stable
+    volumes:
+      - /opt/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /opt/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - /opt/ssl/poodle.local.pem:/etc/nginx/ssl/cert.key:ro
+      - /opt/ssl/poodle.local.crt:/etc/nginx/ssl/cert.crt:ro
+      - nginx-logs:/var/log/nginx/:ro
     networks:
       - frontend
       - backend
     ports:
-      - 8080:80
+      - 80:80
+      - 443:443
     deploy:
       placement:
         max_replicas_per_node: 1
@@ -23,3 +30,6 @@ services:
 networks:
   frontend:
   backend:
+
+volumes:
+  nginx-logs:

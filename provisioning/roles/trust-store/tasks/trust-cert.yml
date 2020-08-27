@@ -1,0 +1,10 @@
+---
+
+- name: Copy certificate to host's trust store
+  copy:
+    src: /tmp/poodle.local.crt
+    dest: /usr/local/share/ca-certificates/
+    backup: yes
+
+- name: Update certificate trust store
+  command: 'update-ca-certificates'

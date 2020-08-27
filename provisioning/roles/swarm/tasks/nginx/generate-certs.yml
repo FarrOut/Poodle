@@ -1,0 +1,35 @@
+---
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  with_items:
+    - /opt/ssl
+
+- name: Generate a new OpenSSL private key
+  openssl_privatekey:
+    path: /opt/ssl/poodle.local.pem
+    force: yes
+
+- name: Generate an OpenSSL Certificate Signing Request with Subject information
+  openssl_csr:
+    path: /opt/ssl/poodle.local.csr
+    privatekey_path: /opt/ssl/poodle.local.pem
+    country_name: ZA
+    organization_name: FarrOut
+    email_address: farr.gs@gmail.com
+    common_name: Poodle
+
+- name: Generate a Self Signed OpenSSL certificate
+  openssl_certificate:
+    path: /opt/ssl/poodle.local.crt
+    privatekey_path: /opt/ssl/poodle.local.pem
+    csr_path: /opt/ssl/poodle.local.csr
+    provider: selfsigned
+
+- name: Download generated certificate from remote host
+  fetch:
+    src: /opt/ssl/poodle.local.crt
+    dest: /tmp/poodle.local.crt
+    flat: yes

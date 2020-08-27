@@ -1,0 +1,28 @@
+server {
+  listen              443 ssl;
+
+  server_name         localhost poodle.local poodle.*;
+  ssl_certificate     /etc/nginx/ssl/cert.crt;
+  ssl_certificate_key /etc/nginx/ssl/cert.key;
+
+  location / {
+      root   /usr/share/nginx/html;
+      index  index.html index.htm;
+  }
+
+  # redirect server error pages to the static page /50x.html
+  #
+  error_page   500 502 503 504  /50x.html;
+  location = /50x.html {
+      root   /usr/share/nginx/html;
+  }
+}
+
+server {
+  listen               80 default_server;
+  listen               [::]:80;
+
+  server_name _;
+
+  return 301 https://$host$request_uri;
+}

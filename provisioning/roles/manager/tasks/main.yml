@@ -1,0 +1,8 @@
+---
+- name: Disabling swarm
+  become: yes
+  command: docker swarm leave -f
+  ignore_errors: yes
+  tags:
+    - never
+    - reset

@@ -1,0 +1,12 @@
+---
+
+# Usage:
+#
+# ansible-playbook -i localhost -l localhost -t trust-cert -K provisioning/personal-moodle-stack-playbook.yml
+#
+
+- name: Trust self-signed certificate
+  include: trust-cert.yml
+  tags:
+    - trust-cert
+    - never
