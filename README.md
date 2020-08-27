@@ -17,10 +17,15 @@ This project is aimed at making the complicated technical task of deploying a Mo
       * [Local](#local)
          * [Deploying with Vagrant](#deploying-with-vagrant)
          * [Accessing Web Service](#accessing-web-service)
-   * [Summary of Deployment Steps](#summary-of-deployment-steps)
+      * [Summary of Deployment Steps](#summary-of-deployment-steps)
       * [Custom Deployment Environment](#custom-deployment-environment)
+   * [Healthchecks](#healthchecks)
+      * [Step into Vagrant machine](#step-into-vagrant-machine)
+      * [Display Docker process info](#display-docker-process-info)
    * [Future Work](#future-work)
       * [Multiple nodes](#multiple-nodes)
+         * [Scaling](#scaling)
+         * [Load Balancing](#load-balancing)
       * [Microservices](#microservices)
          * [Persistance](#persistance)
          * [Moodle Application](#moodle-application)
@@ -171,6 +176,12 @@ Poodle is still a young pup with much training still needed. Here is a summary o
 
 ### Multiple nodes
 At the moment, the entire Poodle stack is deployed to a single machine. This is fine for now, but we'd really like to implement some clustering across multiple machines. Fortunately, the stack is already deployed on a Docker Swarm which needs a little more configuration tweaking to get working.
+
+#### Scaling
+Additional containers and worker nodes should also give us the benefit of elastic horizontal scaling of our application nodes.
+
+#### Load Balancing
+Multiples nodes means that our Nginx gateway can be configured for load-balancing.
 
 ### Microservices
 The original intention was to implement a Microservices architecture. At the moment we only have an Nginx container running as a gateway. Luckily, we are already deploying a Docker Swarm so deploying more services to the existing stack shouldn't be too difficult.
