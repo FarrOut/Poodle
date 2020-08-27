@@ -4,7 +4,8 @@ Poodle (Personal Moodle) is an easy-to-deploy personal Moodle stack.
 This project is aimed at making the complicated technical task of deploying a Moodle webservice as easy as possible for the average user who would prefer to focus their energy on creating and sharing helpful content with the world.
 
 # Table of Contents
-[Prepartion](#prep)
+[Preparation](#preparation)
+[Install Dependencies](#install-dependencies)
 
 ## Preparation
 
