@@ -93,7 +93,6 @@ Delete VMs
 ``` vagrant suspend -f [machine-name] ```
 E.g. vagrant destroy -f boss
 
-
 #### Accessing Web Service
 
 It takes about a minute for the containers that form the stack to spin up, then you may access the web service from the web browser of your choice. Except IE (the poodle buried it).
@@ -111,7 +110,7 @@ in your browser.
 Please note:
 Because the SSL certifate generated is self-signed your browser will present a warning message to this effect. Because we trust Poodle's certificate (after examining this source code) please bypass this warning and proceed.
 
-## Summary of Deployment Steps
+### Summary of Deployment Steps
 For your convenience, here is an ordered list of commands which you need to execute.
 
 ```
@@ -136,6 +135,22 @@ To deploy to remote hosts, we will need to exclude Vagrant and execute Ansible d
 ansible-playbook -i inventory.yml provisioning/personal-moodle-stack-playbook.yml -K
 
 ```
+
+## Healthchecks
+
+Diagnostic healthchecks are transparent to the user as they work under the hood of Docker Swarm. However, you may like to manually inspect the state of the health of your stack.
+
+### Step into Vagrant machine
+
+If your stack is deployed locally via Vagrant, you will first need to step into the relevant Vagrant machine.
+
+```
+
+vagrant ssh [machine-name]
+
+```
+
+![vagrant ssh](https://user-images.githubusercontent.com/8818608/91447791-5bf9b600-e879-11ea-93e6-5465ee6b4cdc.gif)
 
 
 ## Future Work
