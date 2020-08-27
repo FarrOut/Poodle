@@ -44,3 +44,29 @@ vagrant plugin install vagrant-hostsupdater
 git clone git@github.com:FarrOut/Poodle.git
 
 ```
+
+## Usage
+
+A local stack can be easily spun up using Vagrant, from the root of the repository.
+
+To build a new stack of VMs:
+
+``` vagrant provision ```
+
+Launch stack:
+
+``` vagrant up ```
+
+Launch a stack, and reprovision:
+
+``` vagrant up --provision ```
+
+Shutdown VMs
+
+``` vagrant suspend [machine-name] ```
+E.g. vagrant suspend boss
+
+Delete VMs
+
+``` vagrant suspend -f [machine-name] ```
+E.g. vagrant destroy -f boss
