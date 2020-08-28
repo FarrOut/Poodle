@@ -1,9 +1,11 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/farrout/poodle/badge)](https://www.codefactor.io/repository/github/farrout/poodle)
+
 # Poodle
 Poodle (Personal Moodle) is an easy-to-deploy personal Moodle stack.
 
 This project is aimed at making the complicated technical task of deploying a Moodle webservice as easy as possible for the average user who would prefer to focus their energy on creating and sharing helpful content with the world.
 
-<img src="https://user-images.githubusercontent.com/8818608/91449653-a7ad5f00-e87b-11ea-8bc1-c892c382e507.jpg" alt="poodle" width="200"/>
+<img src="https://user-images.githubusercontent.com/8818608/91458370-bc8ef000-e885-11ea-9b1c-f1c20a921da5.png" alt="poodle" width="200"/>
 <hr>
 <!-- ----------------------------------------------------------------------- -->
 
@@ -98,12 +100,12 @@ E.g. vagrant suspend boss
 
 Delete VMs
 
-``` vagrant suspend -f [machine-name] ```
+``` vagrant destroy -f [machine-name] ```
 E.g. vagrant destroy -f boss
 
 #### Accessing Web Service
 
-It takes about a minute for the containers that form the stack to spin up, then you may access the web service from the web browser of your choice. Except IE (the poodle buried it).
+**It takes about a minute** for the containers that form the stack to spin up, then you may access the web service from the web browser of your choice. Except IE (the poodle buried it).
 
 Vagrant defines a name resolution entry, _poodle.local_, in your local machine to point to the stack.
 
