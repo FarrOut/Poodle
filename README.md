@@ -147,6 +147,8 @@ ansible-playbook -i inventory.yml provisioning/site.yml -K
 
 ```
 
+Ansible will ask for your sudo password soon after beginning deployment on a host. Your password is needed for some tasks which require elevated privileges to execute.
+
 ## Healthchecks
 
 Diagnostic healthchecks are transparent to the user as they work under the hood of Docker Swarm. However, you may like to manually inspect the state of the health of your stack.
