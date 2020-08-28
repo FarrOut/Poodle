@@ -203,7 +203,7 @@ The purpose of Poodle. Start off by deploying a vanilla Moodle container, then c
 
 ### Roadmap
 
-Here is a conceptual design for a cloud-based, high-available, horizontally-scalable custom Moodle service.
+Here is a conceptual design for a cloud-based, high-available, horizontally-scalable, load-balanced custom Moodle service.
 
 <img src="https://app.lucidchart.com/publicSegments/view/ed071aa8-068d-4984-8bc2-ba3523dffc07/image.png" alt="architecture" width="480"/>
 
