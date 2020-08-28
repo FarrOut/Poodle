@@ -6,4 +6,4 @@
     - init
 
 - name: Deploy stack
-  include: stack.yml  
+  include: stack.yml
