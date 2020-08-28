@@ -24,6 +24,7 @@ This project is aimed at making the complicated technical task of deploying a Mo
    * [Healthchecks](#healthchecks)
       * [Step into Vagrant machine](#step-into-vagrant-machine)
       * [Display Docker process info](#display-docker-process-info)
+   * [Architecture](#architecture)
    * [Future Work](#future-work)
       * [Multiple nodes](#multiple-nodes)
          * [Scaling](#scaling)
@@ -171,6 +172,9 @@ watch -n 1 'sudo docker ps'
 Under the STATUS column, our containers should hopefully all read 'healthy'.
 
 ![docker ps](https://user-images.githubusercontent.com/8818608/91448185-dcb8b200-e879-11ea-8d69-f1564d0e66f2.gif)
+
+## Architecture
+<img src="https://app.lucidchart.com/publicSegments/view/bef582ba-3af7-4101-9255-ad4dfa4f9c2f/image.png" alt="architecture" width="480"/>
 
 ## Future Work
 
