@@ -143,9 +143,11 @@ To deploy to remote hosts, we will need to exclude Vagrant and execute Ansible d
 
 ```
 
-ansible-playbook -i inventory.yml provisioning/personal-moodle-stack-playbook.yml -K
+ansible-playbook -i inventory.yml provisioning/site.yml -K
 
 ```
+
+Ansible will ask for your sudo password soon after beginning deployment on a host. Your password is needed for some tasks which require elevated privileges to execute.
 
 ## Healthchecks
 
@@ -203,7 +205,7 @@ The purpose of Poodle. Start off by deploying a vanilla Moodle container, then c
 
 ### Roadmap
 
-Here is a conceptual design for a cloud-based, high-available, horizontally-scalable custom Moodle service.
+Here is a conceptual design for a cloud-based, high-available, horizontally-scalable, load-balanced custom Moodle service.
 
 <img src="https://app.lucidchart.com/publicSegments/view/ed071aa8-068d-4984-8bc2-ba3523dffc07/image.png" alt="architecture" width="480"/>
 
