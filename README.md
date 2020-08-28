@@ -1,6 +1,3 @@
-[![CodeScene Code Health](https://codescene.io/projects/9136/status-badges/code-health)](https://codescene.io/projects/9136)
-[![CodeScene System Mastery](https://codescene.io/projects/9136/status-badges/system-mastery)](https://codescene.io/projects/9136)
-
 # Poodle
 Poodle (Personal Moodle) is an easy-to-deploy personal Moodle stack.
 
