@@ -143,7 +143,7 @@ To deploy to remote hosts, we will need to exclude Vagrant and execute Ansible d
 
 ```
 
-ansible-playbook -i inventory.yml provisioning/personal-moodle-stack-playbook.yml -K
+ansible-playbook -i inventory.yml provisioning/site.yml -K
 
 ```
 
