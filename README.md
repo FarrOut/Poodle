@@ -34,6 +34,7 @@ This project is aimed at making the complicated technical task of deploying a Mo
       * [Microservices](#microservices)
          * [Persistance](#persistance)
          * [Moodle Application](#moodle-application)
+      * [Roadmap](#roadmap)
       * [Issue Board](#issue-board)
    * [Conclusion](#conclusion)
 
@@ -199,6 +200,12 @@ One such microservice is a database container to persist our data.
 
 #### Moodle Application
 The purpose of Poodle. Start off by deploying a vanilla Moodle container, then customise it to the flavour that suits our needs.
+
+### Roadmap
+
+Here is a conceptual design for a cloud-based, high-available, horizontally-scalable custom Moodle service.
+
+<img src="https://app.lucidchart.com/publicSegments/view/ed071aa8-068d-4984-8bc2-ba3523dffc07/image.png" alt="architecture" width="480"/>
 
 ### Issue Board
 For a more detailed list of outstanding issues which are begging to be seen to, please visit the [issue board](https://github.com/FarrOut/Poodle/issues).
