@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/farrout/poodle/badge)](https://www.codefactor.io/repository/github/farrout/poodle)
+
 # Poodle
 Poodle (Personal Moodle) is an easy-to-deploy personal Moodle stack.
 
