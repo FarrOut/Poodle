@@ -52,8 +52,9 @@ There are some pre-requisites which need to be in place in order to use this pla
 Git - to checkout the Poodle repository.
 Ansible - to execute the Poodle playbook.
 Vagrant - to provision VMs to run and test your Poodle stack locally.
+VirtualBox - Default VM provisioner for Vagrant.
 
-``` apt install git ansible vagrant ```
+``` apt install git ansible vagrant virtualbox```
 
 #### Install vagrant-hostsupdater
 Vagrant hostsupdater plugin - for local domain name resolution.
